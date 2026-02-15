@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-// ✅ Indicar que esta página es dinámica
 export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
