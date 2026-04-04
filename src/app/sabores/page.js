@@ -3,7 +3,7 @@ import { useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Plus, Menu, Pencil, Trash2 } from "lucide-react";
 import Navbar from "@/components/NavBar";
-import ProductForm from "@/components/ProductosForm";
+import SaboresForm from "@/components/SaboresForm";
 import { openSideMenu } from "@/components/SideMenu";
 import BotonVolver from "@/components/BotonVolver";
 import { useAuth } from "@/hooks/useAuth";
@@ -37,7 +37,7 @@ export default function SaboresPage() {
         showNotification("Error al eliminar ❌", "error");
       }
     },
-    [deleteProducto, fetchProductos, showNotification]
+    [deleteProducto, fetchProductos, showNotification],
   );
 
   const handleCloseModal = useCallback(() => {
@@ -95,10 +95,20 @@ export default function SaboresPage() {
             </h3>
 
             <div className="flex justify-center gap-3 md:gap-4">
-              <Button variant="outline" size="md" onClick={() => handleEdit(item)} className="h-9 w-9 md:h-10 md:w-10 p-0 border-red-500 hover:bg-red-50">
+              <Button
+                variant="outline"
+                size="md"
+                onClick={() => handleEdit(item)}
+                className="h-9 w-9 md:h-10 md:w-10 p-0 border-red-500 hover:bg-red-50"
+              >
                 <Pencil size={18} className="text-red-600" />
               </Button>
-              <Button variant="outline" size="md" onClick={() => handleDelete(item.id)} className="h-9 w-9 md:h-10 md:w-10 p-0 border-red-500 hover:bg-red-50">
+              <Button
+                variant="outline"
+                size="md"
+                onClick={() => handleDelete(item.id)}
+                className="h-9 w-9 md:h-10 md:w-10 p-0 border-red-500 hover:bg-red-50"
+              >
                 <Trash2 size={18} className="text-red-600" />
               </Button>
             </div>
@@ -107,7 +117,7 @@ export default function SaboresPage() {
       </main>
 
       {modalOpen && (
-        <ProductForm
+        <SaboresForm
           editingData={editingItem}
           tableName={TABLE_NAME}
           onClose={handleCloseModal}

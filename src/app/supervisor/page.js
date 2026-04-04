@@ -41,7 +41,7 @@ export default function SupervisorPage() {
   if (!usuario) return null;
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-red-50 to-red-100">
+    <div className="min-h-screen flex flex-col bg-white">
       <NavBar perfilRoute="/PerfilSupervisor" />
 
       <main className="flex-grow flex flex-col items-center justify-center text-center p-8">
